@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:brew_crew/models/custom_user.dart';
+import 'package:brew_crew/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -40,14 +41,16 @@ class AuthService {
 
   Future<CustomUser?> signUpWithEmailAndPassword(
       String email, String password) async {
-    try {
-      UserCredential result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      User? user = result.user;
-      return _customUserFromUser(user);
-    } catch (e) {
+    UserCredential result = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+    User? user = result.user;
+    if (user == null) {
       return null;
     }
+    //create a new document for the new user with the uid
+    await DatabaseService(uid: user.uid)
+        .createUserData('new_crew_member', '0', 100);
+    return _customUserFromUser(user);
   }
 
   Future signOut() async {
