@@ -34,7 +34,7 @@ class _SignInState extends State<SignIn> {
                 style: TextStyle(color: Colors.white),
               ),
               actions: [
-                ElevatedButton.icon(
+                TextButton.icon(
                   onPressed: () {
                     widget.toggleView();
                   },

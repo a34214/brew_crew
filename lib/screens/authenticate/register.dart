@@ -34,7 +34,7 @@ class _RegisterState extends State<Register> {
                 style: TextStyle(color: Colors.white),
               ),
               actions: [
-                ElevatedButton.icon(
+                TextButton.icon(
                   onPressed: () {
                     widget.toggleView();
                   },
