@@ -22,10 +22,14 @@ class MyApp extends StatelessWidget {
     return StreamProvider<CustomUser?>.value(
       value: AuthService().userAuthState,
       initialData: null,
-      child: const MaterialApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Brew Crew',
-        home: SafeArea(
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
+          useMaterial3: true,
+        ),
+        home: const SafeArea(
           child: Wrapper(),
         ),
       ),

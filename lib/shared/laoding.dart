@@ -6,13 +6,10 @@ class Laoding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.brown[100],
-      child: const Center(
-        child: SpinKitPulse(
-          color: Colors.brown,
-          size: 50.0,
-        ),
+    return Center(
+      child: SpinKitPulse(
+        color: Theme.of(context).colorScheme.inversePrimary,
+        size: 50.0,
       ),
     );
   }

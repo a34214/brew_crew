@@ -29,13 +29,13 @@ class Home extends StatelessWidget {
       initialData: const [],
       value: DatabaseService().brews,
       child: Scaffold(
-        backgroundColor: Colors.brown[100],
+        // backgroundColor: Colors.brown[100],
         appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text(
             'Brew Crew',
-            style: TextStyle(color: Colors.white),
+            // style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.brown[400],
           actions: <Widget>[
             TextButton.icon(
               onPressed: () => showSettingsPanel(),

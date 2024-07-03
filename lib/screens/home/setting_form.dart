@@ -44,7 +44,7 @@ class _SettingFormState extends State<SettingForm> {
                   const SizedBox(height: 20.0),
                   TextFormField(
                     initialValue: userData.name,
-                    decoration: textInputDecoration,
+                    decoration: getInputDecoration(context),
                     validator: (value) => value == null || value.isEmpty
                         ? 'Please enter a name'
                         : null,
@@ -52,7 +52,7 @@ class _SettingFormState extends State<SettingForm> {
                   ),
                   const SizedBox(height: 20.0),
                   DropdownButtonFormField(
-                    decoration: textInputDecoration,
+                    decoration: getInputDecoration(context),
                     value: currentSugars ?? userData.sugars,
                     items: sugars.map((sugar) {
                       return DropdownMenuItem(

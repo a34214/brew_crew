@@ -26,12 +26,12 @@ class _SignInState extends State<SignIn> {
     return loading
         ? const Laoding()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            // backgroundColor: Colors.brown[100],
             appBar: AppBar(
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               title: const Text(
                 'Sign in to Brew Crew',
-                style: TextStyle(color: Colors.white),
+                // style: TextStyle(color: Colors.white),
               ),
               actions: [
                 TextButton.icon(
@@ -52,8 +52,8 @@ class _SignInState extends State<SignIn> {
                   children: [
                     const SizedBox(height: 20.0),
                     TextFormField(
-                      decoration:
-                          textInputDecoration.copyWith(hintText: 'Email'),
+                      decoration: getInputDecoration(context)
+                          .copyWith(hintText: 'Email'),
                       validator: (value) => value == null || value.isEmpty
                           ? 'Enter your email'
                           : null,
@@ -65,8 +65,8 @@ class _SignInState extends State<SignIn> {
                     ),
                     const SizedBox(height: 20.0),
                     TextFormField(
-                      decoration:
-                          textInputDecoration.copyWith(hintText: 'Password'),
+                      decoration: getInputDecoration(context)
+                          .copyWith(hintText: 'Password'),
                       validator: (value) => value == null || value.isEmpty
                           ? 'Enter your password'
                           : null,
