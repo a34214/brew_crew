@@ -26,12 +26,10 @@ class _RegisterState extends State<Register> {
     return loading
         ? const Laoding()
         : Scaffold(
-            // backgroundColor: Colors.brown[100],
             appBar: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               title: const Text(
                 'Sign up to Brew Crew',
-                // style: TextStyle(color: Colors.white),
               ),
               actions: [
                 TextButton.icon(
