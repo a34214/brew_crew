@@ -26,12 +26,10 @@ class _SignInState extends State<SignIn> {
     return loading
         ? const Laoding()
         : Scaffold(
-            // backgroundColor: Colors.brown[100],
             appBar: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               title: const Text(
                 'Sign in to Brew Crew',
-                // style: TextStyle(color: Colors.white),
               ),
               actions: [
                 TextButton.icon(

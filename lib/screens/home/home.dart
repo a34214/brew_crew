@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
             return Container(
               padding:
                   const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: SettingForm(),
+              child: const SettingForm(),
             );
           });
     }
@@ -29,12 +29,10 @@ class Home extends StatelessWidget {
       initialData: const [],
       value: DatabaseService().brews,
       child: Scaffold(
-        // backgroundColor: Colors.brown[100],
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text(
             'Brew Crew',
-            // style: TextStyle(color: Colors.white),
           ),
           actions: <Widget>[
             TextButton.icon(
